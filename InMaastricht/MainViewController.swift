@@ -9,12 +9,15 @@ import UIKit
 
 class MainViewController: UITableViewController {
     
-    let placesNames = [
-        "Hoge Brug", "Cave", "Markt", "Vrijthof", "Stadspark", "Jeker", "McDonalds",
-        "Frontenpark", "Basin", "Wyck", "Bonnefanten Museum", "Sint Pieter", "Maas", "Lumiere"
+    let restaurantNames = [
+        "Burger Heroes", "Kitchen", "Bonsai", "Дастархан",
+        "Индокитай", "X.O", "Балкан Гриль", "Sherlock Holmes",
+        "Speak Easy", "Morris Pub", "Вкусные истории",
+        "Классик", "Love&Life", "Шок", "Бочка"
     ]
     
-    
+    //   "Hoge Brug", "Cave", "Markt", "Vrijthof", "Stadspark", "Jeker", "McDonalds",
+   // "Frontenpark", "Basin", "Wyck", "Bonnefanten Museum", "Sint Pieter", "Maas", "Lumiere"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,21 +27,22 @@ class MainViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
-        return placesNames.count
+        return restaurantNames.count
     }
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        cell.textLabel?.text = placesNames[indexPath.row]
+        cell.textLabel?.text = restaurantNames[indexPath.row]
+        cell.imageView?.image = UIImage(named: restaurantNames[indexPath.row])
 
         return cell
     }
